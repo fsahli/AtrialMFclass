@@ -1,3 +1,5 @@
+[Try on Google Colab](https://colab.research.google.com/drive/1ijhDpVJZb03Cq-O8xjPtdbwO19DHTPvv?usp=sharing)
+
 # AtrialMFclass
 
 Code for the publication: 
