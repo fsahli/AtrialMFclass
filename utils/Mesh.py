@@ -5,8 +5,8 @@ This module contains the mesh class. This class is the triangular surface where 
 import numpy as np
 from scipy.spatial import cKDTree
 import collections
-from tvtk.api import tvtk
-from tvtk.common import configure_input
+#from tvtk.api import tvtk
+#from tvtk.common import configure_input
 import scipy.sparse as sp
 from scipy.sparse.linalg import spsolve
 
@@ -159,23 +159,23 @@ class Mesh:
                     break
         return projected_point, intriangle, r, t
                 
-    def writeVTU(self,filename, verts, connectivity, scalars = None, vectors = None):
-        tvtk.Triangle().cell_type
-        tri_type = tvtk.Triangle().cell_type
-        ug = tvtk.UnstructuredGrid(points=verts)
-        ug.set_cells(tri_type, connectivity)
+    # def writeVTU(self,filename, verts, connectivity, scalars = None, vectors = None):
+    #     tvtk.Triangle().cell_type
+    #     tri_type = tvtk.Triangle().cell_type
+    #     ug = tvtk.UnstructuredGrid(points=verts)
+    #     ug.set_cells(tri_type, connectivity)
         
-        if scalars is not None:
-            ug.point_data.scalars = scalars
-            ug.point_data.scalars.name = 'phi'
+    #     if scalars is not None:
+    #         ug.point_data.scalars = scalars
+    #         ug.point_data.scalars.name = 'phi'
             
-        if vectors is not None:
-            ug.cell_data.vectors = vectors
-            ug.cell_data.vectors.name = 'X'
+    #     if vectors is not None:
+    #         ug.cell_data.vectors = vectors
+    #         ug.cell_data.vectors.name = 'X'
     
-        w = tvtk.XMLUnstructuredGridWriter(file_name=filename)
-        configure_input(w,ug)
-        w.write()
+    #     w = tvtk.XMLUnstructuredGridWriter(file_name=filename)
+    #     configure_input(w,ug)
+    #     w.write()
                 
     def Bmatrix(self,element):
         nodeCoords = self.verts[self.connectivity[element]]
