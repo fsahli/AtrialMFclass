@@ -3,7 +3,6 @@ scipy
 jax>=0.1.55
 jaxlib>=0.1.37
 sklearn
-KDEpy
 pyDOE
 numpyro
 meshio

@@ -5,7 +5,7 @@ from jax.example_libraries import stax
 from jax.example_libraries.stax import Dense, Tanh
 from jax.nn.initializers import glorot_normal, normal
 from jax.scipy.stats import multivariate_normal
-from KDEpy import FFTKDE
+#from KDEpy import FFTKDE
 from scipy.interpolate import interp1d
 
 from scipy.stats import gaussian_kde
